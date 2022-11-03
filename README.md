@@ -1,2 +1,2 @@
 # spring-boot-std-demo
-spring-boot 精简项目
+spring-boot template project.
