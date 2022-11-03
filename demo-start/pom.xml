@@ -42,24 +42,6 @@
                 </configuration>
             </plugin>
 
-            <!-- AutoConfig 配置工具-->
-            <plugin>
-                <groupId>com.alibaba.citrus.tool</groupId>
-                <artifactId>autoconfig-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>autoconfig</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <!-- 配置后，是否展开目标文件，默认为false，不展开。-->
-                    <exploding>true</exploding>
-                </configuration>
-            </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>

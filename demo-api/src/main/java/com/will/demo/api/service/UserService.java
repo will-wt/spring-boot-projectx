@@ -1,6 +1,9 @@
 package com.will.demo.api.service;
 
+import com.will.demo.api.Result;
 import com.will.demo.api.dto.UserDTO;
+
+import java.util.List;
 
 /**
  * @author Will.WT
@@ -13,7 +16,14 @@ public interface UserService {
      * @param userId
      * @return
      */
-    UserDTO getUser(Long userId);
+    Result<UserDTO> getUser(Long userId);
 
+    /**
+     * 分页查询用户
+     * @param offset
+     * @param pageSize
+     * @return
+     */
+    Result<List<UserDTO>> listUser(int offset, int pageSize);
 
 }

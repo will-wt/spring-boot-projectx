@@ -1,8 +1,8 @@
 package com.will.demo.start.controller;
 
-import com.will.demo.biz.manager.UserManager;
-import com.will.demo.common.Result;
-import com.will.demo.dal.dataobject.UserDO;
+import com.will.demo.api.dto.UserDTO;
+import com.will.demo.api.service.UserService;
+import com.will.demo.api.Result;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,19 +20,17 @@ import java.util.List;
 public class UserController {
 
     @Resource
-    private UserManager userManager;
+    private UserService userService;
 
 
     @GetMapping("/get")
-    public Result<UserDO> getUser(@RequestParam Long userId){
-        UserDO userDO = userManager.getUser(userId);
-        return new Result<>(userDO);
+    public Result<UserDTO> getUser(@RequestParam Long userId){
+        return userService.getUser(userId);
     }
 
-    @GetMapping("/query")
-    public Result<List<UserDO>> queryUser(@RequestParam int offset, @RequestParam int pageSize){
-        List<UserDO> userDOs = userManager.queryUser(offset, pageSize);
-        return new Result<>(userDOs);
+    @GetMapping("/list")
+    public Result<List<UserDTO>> queryUser(@RequestParam int offset, @RequestParam int pageSize){
+        return userService.listUser(offset, pageSize);
     }
 
 }

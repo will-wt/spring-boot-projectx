@@ -1,4 +1,4 @@
-package com.will.demo.common;
+package com.will.demo.api;
 
 /**
  * @author Will.WT

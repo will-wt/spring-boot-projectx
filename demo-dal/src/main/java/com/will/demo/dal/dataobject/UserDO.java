@@ -17,7 +17,7 @@ import java.util.Date;
 @Builder
 public class UserDO {
 
-    private Long id;
+    private Long userId;
     private Date gmtCreate;
     private Date gmtModified;
     private String name;

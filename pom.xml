@@ -78,6 +78,12 @@
                 <version>8.0.21</version>
                 <scope>runtime</scope>
             </dependency>
+            <!-- druid数据源 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>1.2.13</version>
+            </dependency>
 
             <dependency>
                 <groupId>org.apache.groovy</groupId>
@@ -104,6 +110,12 @@
             </dependency>
 
             <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>4.4</version>
+            </dependency>
+
+            <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>4.12</version>
@@ -124,11 +136,6 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
                     <version>3.2.2</version>
-                </plugin>
-                <plugin>
-                    <groupId>com.alibaba.citrus.tool</groupId>
-                    <artifactId>autoconfig-maven-plugin</artifactId>
-                    <version>${autoconfig-plugin-version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.springframework.boot</groupId>

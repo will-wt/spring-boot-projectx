@@ -1,5 +1,5 @@
 # spring-boot-tiny-project
-> spring-boot tiny project template.
+> 一个spring-boot搭建的简洁的工程模板。
 
 # 工程结构
 + demo-api     ： 接口层

@@ -19,7 +19,12 @@ interface UserMapper {
      * @return
      */
     @Select('''
-        select * 
+        select id as userId,
+               gmt_create,
+               gmt_modified,
+               name,
+               age,
+               address
         from user_info 
         where id = #{userId}
     ''')
@@ -32,7 +37,12 @@ interface UserMapper {
      * @return
      */
     @Select('''<script>
-        select * 
+        select id as userId,
+               gmt_create,
+               gmt_modified,
+               name,
+               age,
+               address 
         from user_info
         limit #{offset}, #{pageSize}
     </script>''')
