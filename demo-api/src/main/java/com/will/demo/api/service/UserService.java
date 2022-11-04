@@ -2,7 +2,10 @@ package com.will.demo.api.service;
 
 import com.will.demo.api.Result;
 import com.will.demo.api.dto.UserDTO;
+import org.hibernate.validator.constraints.Range;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 /**
@@ -16,7 +19,7 @@ public interface UserService {
      * @param userId
      * @return
      */
-    Result<UserDTO> getUser(Long userId);
+    Result<UserDTO> getUser(@NotNull(message = "userId required") Long userId);
 
     /**
      * 分页查询用户
@@ -24,6 +27,7 @@ public interface UserService {
      * @param pageSize
      * @return
      */
-    Result<List<UserDTO>> listUser(int offset, int pageSize);
+    Result<List<UserDTO>> listUser(@Min(value = 0, message = "offset invalid") int offset,
+                                   @Range(min = 1, max = 30, message = "pageSize over range") int pageSize);
 
 }

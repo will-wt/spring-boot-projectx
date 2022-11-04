@@ -8,6 +8,7 @@ import com.will.demo.dal.dataobject.UserDO;
 import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -18,6 +19,7 @@ import java.util.stream.Collectors;
  * @date 2022/11/03 13:56
  */
 @Service
+@Validated
 public class UserServiceImpl implements UserService {
 
     @Resource
