@@ -2,7 +2,7 @@ package com.will.demo.start.controller;
 
 import com.will.demo.api.dto.UserDTO;
 import com.will.demo.api.service.UserService;
-import com.will.demo.api.Result;
+import com.will.demo.result.Result;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;

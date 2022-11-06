@@ -1,9 +1,21 @@
-# spring-boot-tiny-project
-> 一个spring-boot搭建的简洁的工程模板。
+# 简介
+> spring-boot-tiny-project 是一个基于Spring Boot搭建的简洁的项目模板，改项目模板已集成了常用的技术组件，
+> 用户基于该模板可以快速搭建自己的WEB/API项目。
 
-# 工程结构
-+ demo-api     ： 接口层
+# 项目结构
++ demo-api     ： 接口层，比如内部的RPC接口
 + demo-common  ： 公共方法层
 + demo-dal     ： 数据接入层
 + demo-biz     ： 业务处理层
-+ demo-start   ： 启动层
++ demo-start   ： 启动层，包含配置项和controller
+
+
+# 技术组件
++ Spring Boot
++ MyBatis
++ Druid
++ Groovy
++ Logback
++ Jackson
++ Lombok
++ Hibernate Validator

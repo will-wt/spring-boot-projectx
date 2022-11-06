@@ -1,6 +1,6 @@
 package com.will.demo.biz.service;
 
-import com.will.demo.api.Result;
+import com.will.demo.result.Result;
 import com.will.demo.api.dto.UserDTO;
 import com.will.demo.api.service.UserService;
 import com.will.demo.biz.manager.UserManager;

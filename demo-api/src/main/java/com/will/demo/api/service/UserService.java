@@ -1,6 +1,6 @@
 package com.will.demo.api.service;
 
-import com.will.demo.api.Result;
+import com.will.demo.result.Result;
 import com.will.demo.api.dto.UserDTO;
 import org.hibernate.validator.constraints.Range;
 
