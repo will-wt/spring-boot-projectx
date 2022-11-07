@@ -1,5 +1,5 @@
 # 简介
-> spring-boot-tiny-project 是一个基于Spring Boot搭建的简洁的项目模板，该项目模板已集成了常用的技术组件，
+> spring-boot-projectx 是一个基于Spring Boot搭建的简洁的项目模板，该项目模板已集成了常用的技术组件，
 > 用户基于该模板可以快速搭建自己的WEB/API项目。
 
 # 项目结构
