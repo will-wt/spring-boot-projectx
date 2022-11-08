@@ -115,6 +115,11 @@ debug：当此属性设置为true时,将打印出logback内部日志信息,实�
         <appender-ref ref="errorAppender"/>
     </logger>
 
+    <logger name="sqlLog" level="info" additivity="false">
+        <appender-ref ref="sqlAppender"/>
+        <appender-ref ref="errorAppender"/>
+    </logger>
+
     <logger name="appLog" level="info" additivity="false">
         <appender-ref ref="appAppender"/>
         <appender-ref ref="errorAppender"/>
