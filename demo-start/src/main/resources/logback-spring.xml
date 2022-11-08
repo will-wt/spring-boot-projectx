@@ -83,11 +83,35 @@ debug：当此属性设置为true时,将打印出logback内部日志信息,实�
         <neverBlock>true</neverBlock>
     </appender>
 
+    <appender name="sqlAppenderSync" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_HOME}/sql.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>${LOG_PATTERN}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/sql.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <maxHistory>14</maxHistory>
+            <totalSizeCap>5GB</totalSizeCap>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>256MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <cleanHistoryOnStart>true</cleanHistoryOnStart>
+        </rollingPolicy>
+    </appender>
+    <appender name="sqlAppender" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="sqlAppenderSync"/>
+        <neverBlock>true</neverBlock>
+    </appender>
+
 
 
     <!-- 自定义logger-->
     <logger name="java.sql" level="info" additivity="false">
-        <appender-ref ref="appAppender"/>
+        <appender-ref ref="sqlAppender"/>
         <appender-ref ref="errorAppender"/>
     </logger>
 
