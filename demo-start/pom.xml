@@ -11,10 +11,10 @@
     <artifactId>demo-start</artifactId>
     <packaging>jar</packaging>
 
-    <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-    </properties>
+<!--    <properties>-->
+<!--        <maven.compiler.source>8</maven.compiler.source>-->
+<!--        <maven.compiler.target>8</maven.compiler.target>-->
+<!--    </properties>-->
 
     <dependencies>
         <dependency>
@@ -35,17 +35,48 @@
     </dependencies>
 
     <build>
-        <finalName>${project.parent.artifactId}</finalName>
+        <!-- 指定打包时的文件名 -->
+        <finalName>spring-boot-projectx</finalName>
+
+        <!-- 资源文件打包配置。build过程中涉及的资源文件，用于包含 或 排除某些资源文件 -->
+        <resources>
+            <resource>
+                <!-- 资源文件的路径，默认位于${basedir}/src/main/resources/目录下 -->
+                <directory>src/main/resources</directory>
+                <!-- 设为true，才能替换资源文件中的占位符 -->
+                <filtering>true</filtering>
+                <!-- 一组文件名的匹配模式，被匹配的资源文件将被构建过程忽略（excludes）或者包含（includes）。
+                     同时被includes和excludes匹配的资源文件，将被忽略。 -->
+                <includes>
+                    <include>application.properties</include>
+                    <include>application-${spring.profiles.active}.properties</include>
+                </includes>
+            </resource>
+            <resource>
+                <!-- 打包其它资源文件 -->
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering>
+                <includes>
+                    <!--  <include>**/*.properties</include> -->
+                    <include>**/*.xml</include>
+                    <include>**/*.html</include>
+                    <include>**/*.js</include>
+                    <include>**/*.css</include>
+                    <include>**/*.png</include>
+                    <include>**/*.ico</include>
+                </includes>
+            </resource>
+        </resources>
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <!-- 指定编译的jdk版本和编码-->
-                    <source>1.8</source>
-                    <target>1.8</target>
-                    <encoding>utf-8</encoding>
-                </configuration>
             </plugin>
 
             <plugin>
@@ -73,6 +104,8 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
+                    <!-- 把lib目录中手动加入的jar打包进来 -->
+                    <includeSystemScope>true</includeSystemScope>
                     <excludes>
                         <exclude>
                             <groupId>org.projectlombok</groupId>
